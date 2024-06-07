@@ -12,6 +12,19 @@ class adsController {
     }
   }
 
+  async getAdsByEmail(req, res) {
+    const { email } = req.body;
+
+    try {
+      const ads = await Ad.find({ email: email });
+      res.json(ads);
+    } catch (err) {
+      return res
+        .status(500)
+        .json({ message: `Unable to get ads by email, error - ${err}` });
+    }
+  }
+
   async deleteAds(req, res) {
     try {
       const { _id } = req.body;
@@ -36,7 +49,7 @@ class adsController {
 
   async createAd(req, res) {
     try {
-      const { city, mobile, requirements, salary, username, adTitle } =
+      const { city, mobile, requirements, salary, username, adTitle, email } =
         req.body;
       const ad = new Ad({
         city,
@@ -45,6 +58,7 @@ class adsController {
         salary,
         username,
         adTitle,
+        email,
       });
 
       await ad.save();

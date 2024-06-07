@@ -7,6 +7,7 @@ const Ad = new Schema({
   salary: { type: String, required: true },
   username: { type: String, required: true },
   adTitle: { type: String, required: true },
+  email: { type: String, required: true },
   created: Schema.Types.Mixed,
 });
 
