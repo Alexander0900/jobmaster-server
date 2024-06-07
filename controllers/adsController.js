@@ -59,6 +59,7 @@ class adsController {
         username,
         adTitle,
         email,
+        created: Date.now(),
       });
 
       await ad.save();

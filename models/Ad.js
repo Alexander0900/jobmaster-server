@@ -8,7 +8,7 @@ const Ad = new Schema({
   username: { type: String, required: true },
   adTitle: { type: String, required: true },
   email: { type: String, required: true },
-  created: Schema.Types.Mixed,
+  created: { type: Number, required: true },
 });
 
 module.exports = model("Ad", Ad);
