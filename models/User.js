@@ -6,6 +6,7 @@ const User = new Schema({
   email: { type: String, required: true, unique: true },
   isBlock: { type: Boolean, required: true },
   registrationDate: { type: Number, required: true },
+  roles: { type: [String], default: ["user"] },
   lastLogin: Schema.Types.Mixed,
 });
 

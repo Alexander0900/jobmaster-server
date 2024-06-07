@@ -59,7 +59,12 @@ class authController {
 
       const token = generateAccessToken(user.email);
 
-      return res.json({ token, email });
+      return res.json({
+        token,
+        email: user.email,
+        roles: user.roles,
+        username: user.username,
+      });
     } catch (err) {
       console.log(err);
       res.status(400).json({ message: "sing in in error" });
