@@ -7,7 +7,6 @@ const User = new Schema({
   isBlock: { type: Boolean, required: true },
   registrationDate: { type: Number, required: true },
   roles: { type: [String], default: ["user"] },
-  lastLogin: Schema.Types.Mixed,
 });
 
 module.exports = model("User", User);

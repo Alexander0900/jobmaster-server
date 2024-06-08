@@ -30,7 +30,6 @@ class authController {
         email,
         isBlock: false,
         registrationDate: Date.now(),
-        lastLogin: null,
       });
 
       await user.save();
